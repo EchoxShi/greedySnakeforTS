@@ -15,6 +15,30 @@ module.exports = {
         use: "ts-loader", // 使用什么
         exclude:/node_modules/ ,//也是个正则，路径里有这个就被排除，即不使用这条规则
       },
+      {
+        test: /\.less$/,
+        use: [
+          "style-loader",
+          "css-loader",
+          //在less 转为css 之后进行老版本的兼容，引入postcss
+          {
+            loader: "postcss-loader",
+            options:{
+              postcssOptions:{
+                plugins:[
+                  [
+                    "postcss-preset-env",
+                    {
+                      browsers:"last 2 versions"
+                    }
+                  ]
+                ]
+              }
+            }
+          },
+          "less-loader"
+        ]
+      }
     ],
   },
   //配置webpack插件

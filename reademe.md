@@ -44,3 +44,10 @@ https://webpack.docschina.org/configuration/mode/
 `npm i -D clean-webpack-plugin`
 
 插件的使用：第一步 引入，第二步 new
+
+使用less
+`npm i -D less less-loader css-loader style-loader`
+
+webpack 将css变为js代码，为了兼容老版本浏览器，需要加一些前缀，可以使用postcss 加载器
+
+`npm i -D postcss postcss-loader postcss-preset-env`
