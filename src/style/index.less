@@ -1,4 +1,67 @@
-body{
-  background-color: rgb(244, 249, 249);
-  display: flex;
+//设置变量
+@bg-color: #bdd4a8;
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+body {
+  font: bold 20px "Courier";
+}
+.main {
+  width: 360px;
+  height: 420px;
+  background-color: @bg-color;
+  margin: 100px auto;
+  border: 10px solid black;
+  border-radius: 20px;
+
+  .stage {
+    width: 304px;
+    height: 304px;
+    margin: 5px auto;
+    border: 2px solid black;
+
+    position: relative; //蛇必须绝对定位，因为要移动，所以父元素就相对定位
+    .snake {
+      & > div {
+        width: 10px;
+        height: 10px;
+        background-color: black;
+        border: 1px solid @bg-color;
+        position: absolute;
+      }
+    }
+    .food {
+      width: 10px;
+      height: 10px;
+      background-color: rgb(215, 248, 85);
+      left: 100px;
+      top: 100px;
+      border: 1px solid @bg-color;
+      position: absolute;
+      display: flex;
+      flex-flow: row wrap;
+      justify-content: space-between;
+      align-content: space-between;
+      & > div {
+        width: 4px;
+        height: 4px;
+        background-color: black;
+        border: 1px solid @bg-color;
+        transform: rotate(45deg);
+      }
+    }
+  }
+  .score-panel {
+    width: 360px;
+    height: 100px;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    .score {
+    }
+    .level {
+    }
+  }
 }

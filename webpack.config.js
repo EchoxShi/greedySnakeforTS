@@ -7,6 +7,12 @@ module.exports = {
   output: {
     path: path.resolve(__dirname, "dist"),
     filename: "bundle.js",
+
+    //不使用箭头函数
+    environment:{
+      arrowFunction: false,
+      const: false
+    }
   },
   module: {
     rules: [
