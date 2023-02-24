@@ -14,6 +14,12 @@ module.exports = {
       const: false
     }
   },
+  resolve: {
+    // alias:{
+    //   modules: path.resolve(__dirname,'src/modules')
+    // },
+    extensions: ['.js','.jsx','.ts'],
+  },
   module: {
     rules: [
       {
